@@ -1,0 +1,17 @@
+---
+interface Props {
+	titulo: string;
+}
+const { titulo } = Astro.props;
+---
+
+<div class="relative overflow-hidden h-24 bg-[#023E8A] bg-opacity-90">
+  <div class="flex items-center justify-center text-white p-2 h-full">
+    <div class="absolute opacity-10">
+      <p class="text-8xl">{titulo}</p>
+    </div>
+    <div class="absolute border-y">
+      <p class="text-4xl text-[#FDCE15] font-semibold">{titulo}</p>
+    </div>
+  </div>
+</div>
