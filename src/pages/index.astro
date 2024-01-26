@@ -6,6 +6,8 @@ import About from '../components/About.astro';
 import Footer from '../components/Footer.astro';
 import Galery from '../components/Galery.astro';
 import Banner from '../components/Banner.astro';
+import PreFooter from '../components/PreFooter.astro';
+import Proyects from '../components/Proyects.astro';
 ---
 
 <Layout title="Grupo AVG" description="Somos una empresa de desarrollos inmobiliarios con la impronta de los emprendedores que desafían la realidad establecida y proponen nuevas experiencias.">
@@ -21,11 +23,11 @@ import Banner from '../components/Banner.astro';
 		  </section>
 		 
 	</main>
-	
+	<Banner titulo='NOSOTROS'/>
 	<About />
-	<Banner titulo="PROYECTOS"/>
-	<Galery />
-	<Banner titulo="LUISITO"/>
+	<PreFooter />
+	<Banner titulo='PROYECTOS'/>
+	<Proyects />
 	<Footer />
 </Layout>
 

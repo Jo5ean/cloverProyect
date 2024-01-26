@@ -3,7 +3,7 @@ import Header from "../components/Header.astro";
 
 interface Props {
 	title: string;
-	description: string; 
+	description: string;
 }
 
 const { description, title } = Astro.props;
@@ -17,12 +17,56 @@ const { description, title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<title>{title}</title>
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
-		<script src="https://kit.fontawesome.com/f8dca34d41.js" crossorigin="anonymous"></script>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/f8dca34d41.js"
+			crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<slot />
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"
+		></script>
+		<script>
+			// ------------------- script para cambio de titulo------------------- //
+
+			const words = ["Diseñando", "Construyendo", "Transformando"];
+			let currentIndex = 0;
+			const intervalTime = 3000;
+
+			function intercalateWords() {
+				const intercalatingWord =
+					document.getElementById("intercalatingWord");
+				intercalatingWord.textContent = words[currentIndex];
+				currentIndex = (currentIndex + 1) % words.length;
+			}
+			setInterval(intercalateWords, intervalTime);
+
+			// ------------------- script ccontadores ------------------- //
+
+			function incrementarNumeros() {
+				const numeros = document.querySelectorAll(".number");
+				const valoresFinales = [800, 85, 50, 350, 27]; // Valores finales de cada número
+
+				numeros.forEach((numero, index) => {
+					let valorActual = 0;
+					const intervalo = setInterval(() => {
+						numero.textContent = (++valorActual).toString();
+						if (valorActual === valoresFinales[index]) {
+							clearInterval(intervalo);
+						}
+					}, 20); // Velocidad de incremento en milisegundos
+				});
+			}
+
+			// Llama a la función para iniciar el incremento cuando se cargue el DOM
+			document.addEventListener("DOMContentLoaded", incrementarNumeros);
+
+		
+		</script>
 	</body>
 </html>
 <style is:global>

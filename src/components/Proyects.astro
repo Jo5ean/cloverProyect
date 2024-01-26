@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <div class="card text-center" style="background-image: url('/proyecto1/3.png');"><h2 class="text-3xl text-[#FDCE15]">ERANIME <br><span class="text-white">Proyecto</span></h2></div>
+    <div class="card text-center" style="background-image: url('/proyecto2/2.png');"><h2 class="text-3xl text-[#FDCE15]">ERANIME <br><span class="text-white">Pista de Aterrisaje</span></h2></div>
+    <div class="card text-center" style="background-image: url('/proyecto3/3.png');"><h2 class="text-3xl text-[#FDCE15]">UTE AVG <br><span class="text-white">Milic</span></h2></div>
+    <div class="card"><h2>4</h2></div>
+</div>
+
+<style>
+    .container {
+        display: flex;
+        gap: 10px;
+        position: relative; /* Necesario para el posicionamiento absoluto del pseudo-elemento */
+    }
+
+    .card {
+        position: relative; /* Para permitir el posicionamiento absoluto del pseudo-elemento */
+        background-color: #fff;
+        height: 400px;
+        width: 200px;
+        flex: 1;
+        border-radius: 16px;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover; /* Ajustar el tamaño de la imagen */
+        background-repeat: no-repeat; /* Evitar repetición de la imagen */
+        background-position: center; /* Centrar la imagen */
+        color: white; /* Color de texto blanco */
+    }
+
+    .card::before {
+        content: ""; /* Pseudo-elemento para crear la capa superpuesta */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad del 90% */
+        border-radius: 16px; /* Misma curvatura que las esquinas de la carta */
+    }
+
+    .card h2 {
+        z-index: 1; /* Para que el texto esté por encima del fondo oscuro */
+    }
+
+    .card:hover {
+        flex: 2;
+        background-color: #b8b8b8;
+    }
+</style>
