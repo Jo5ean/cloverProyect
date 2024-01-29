@@ -4,7 +4,7 @@ import Header from "../components/Header.astro";
 import Carousel from '../components/Carousel.astro';
 import About from '../components/About.astro';
 import Footer from '../components/Footer.astro';
-import Galery from '../components/Galery.astro';
+import ProyectsMobile from '../components/ProyectsMobile.astro';
 import Banner from '../components/Banner.astro';
 import PreFooter from '../components/PreFooter.astro';
 import Proyects from '../components/Proyects.astro';
@@ -27,7 +27,12 @@ import Proyects from '../components/Proyects.astro';
 	<About />
 	<PreFooter />
 	<Banner titulo='PROYECTOS'/>
+	<div class="hidden lg:block">
 	<Proyects />
+    </div>
+	<div class="block lg:hidden">
+	<ProyectsMobile />
+    </div>
 	<Footer />
 </Layout>
 

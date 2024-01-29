@@ -1,22 +1,15 @@
-<div class="container mt-5">
-    <div class="card text-center" style="background-image: url('/proyecto1/3.png');"><h2 class="text-3xl text-[#FDCE15]">ERANIME <br><span class="text-white">Proyecto</span></h2></div>
-    <div class="card text-center" style="background-image: url('/proyecto2/2.png');"><h2 class="text-3xl text-[#FDCE15]">ERANIME <br><span class="text-white">Pista de Aterrisaje</span></h2></div>
-    <div class="card text-center" style="background-image: url('/proyecto3/3.png');"><h2 class="text-3xl text-[#FDCE15]">UTE AVG <br><span class="text-white">Milic</span></h2></div>
-    <div class="card"><h2>4</h2></div>
+<div class="relative flex flex-col md:flex-row gap-[10px] [&>div]:h-screen lg:[&>div]:h-96 bg-[#023E8A] bg-opacity-60 py-10">
+    <div class="card text-center md:flex-1" style="background-image: url('/proyecto1/3.png');"><h2 class="text-3xl text-[#FDCE15]">ERANIME <br><span class="text-white">Proyecto</span></h2></div>
+    <div class="card text-center md:flex-1" style="background-image: url('/proyecto2/2.png');"><h2 class="text-3xl text-[#FDCE15]">ERANIME <br><span class="text-white">Pista de Aterrisaje</span></h2></div>
+    <div class="card text-center md:flex-1" style="background-image: url('/proyecto3/3.png');"><h2 class="text-3xl text-[#FDCE15]">UTE AVG <br><span class="text-white">Milic</span></h2></div>
+    <div class="card md:flex-1"><h2>4</h2></div>
 </div>
 
-<style>
-    .container {
-        display: flex;
-        gap: 10px;
-        position: relative; /* Necesario para el posicionamiento absoluto del pseudo-elemento */
-    }
 
+<style>
     .card {
         position: relative; /* Para permitir el posicionamiento absoluto del pseudo-elemento */
         background-color: #fff;
-        height: 400px;
-        width: 200px;
         flex: 1;
         border-radius: 16px;
         transition: all 0.3s ease;

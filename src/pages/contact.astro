@@ -136,7 +136,7 @@ import Footer from "../components/Footer.astro";
       </div>
     </div>
   </nav>
-    <div class="relative overflow-hidden rounded-lg h-96">
+    <div class="relative overflow-hidden rounded-lg h-56 lg:h-96">
     <img src="/contacto.jpg" class="absolute block w-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
     <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-100">
         <!-- Fondo con opacidad -->
@@ -145,26 +145,56 @@ import Footer from "../components/Footer.astro";
 
 
     <Banner titulo="CONTACTO" />
-    <div class="flex justify-center">
-        <div class="grid grid-cols-3 gap-10 xs:grid-cols-1">
-            <div class="card w-48 h-48 flex flex-col items-center justify-center">
-                <h3 class="text-white text-4xl font-extrabold">+ <span class="number">27</span></h3>
-                <p class="text-white text-lg text-center">Proyectos mineros<br> en toda la Argentina</p>
-            </div>
-            <div class="card w-48 h-48 flex flex-col items-center justify-center">
-                <h3 class="text-white text-4xl font-extrabold">+ <span class="number">27</span></h3>
-                <p class="text-white text-lg text-center">Proyectos mineros<br> en toda la Argentina</p>
-            </div>
-            <div class="card w-48 h-48 flex flex-col items-center justify-center">
-                <h3 class="text-white text-4xl font-extrabold">+ <span class="number">27</span></h3>
-                <p class="text-white text-lg text-center">Proyectos mineros<br> en toda la Argentina</p>
-            </div>
-        </div>
-    </div>
-    
-    </div>
-
+    <div class="flex justify-center my-16">
+      <div class="grid gap-24 grid-cols-1 lg:grid-cols-3">
+          <div class="card-client">
+              <div class="user-picture">
+                  <img src="/email.png" alt="Icono de Email">
+              </div>
+              <p class="name-client"> Correo Electr&oacute;nico
+                  <span>avg@gmail.com
+                  </span>
+              </p>
+          </div>
+          <div class="card-client">
+              <div class="user-picture">
+                  <img src="/telefono.png" alt="Icono de Telefono">
+              </div>
+             
+              <p class="name-client"> Telefonos
+                  <span>423-1234
+                  </span>
+                  <span>421-1234
+                  </span>
+                  <span>456-1234
+                  </span>
+              </p>
+          </div>
+          <div class="card-client">
+              <div class="user-picture">
+                  <img src="/calendario.png" alt="Icono de Calendario">
+              </div>
+             
+              <p class="name-client"> Horarios de Atención
+                  <span>
+                    Avenida Asunción 1840
+                  </span>
+                  <span>
+                    Lunes a viernes:
+                  </span>
+                  <span>
+                    9hs. a 18hs.
+                  </span>
+              </p>
+          </div>
+      </div>
+  </div>
+  <div style="position: relative; width: 100%; height: 400px;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3512.020181808281!2d-65.35038849999999!3d-24.788066000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941bc45893da42b1%3A0xfcd7ef45633948b!2sGRUPO%20AGV!5e0!3m2!1sen!2sar!4v1610702399348!5m2!1sen!2sar" width="100%" height="400" frameborder="0" style="border:0; position: absolute; top: 0; left: 0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  </div>
+  
     <Footer />
+
 </Layout>
 
 <style>
@@ -220,12 +250,55 @@ import Footer from "../components/Footer.astro";
     .subrayado:hover p::before {
       width: 100%;
     }
-    .card {
-            position: relative;
-        justify-content: center;
-        align-items: center;
-      border-radius: 50px;
-      box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    }
+    .card-client {
+  background: #023E8A;
+  width: 16rem;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 4px solid #023E8A;
+  box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.card-client:hover {
+  transform: translateY(-10px);
+}
+
+.user-picture {
+  overflow: hidden;
+  object-fit: cover;
+  width: 5rem;
+  height: 5rem;
+  border: 4px solid #023E8A;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.user-picture svg {
+  width: 2.5rem;
+  fill: currentColor;
+}
+
+.name-client {
+  margin: 0;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.name-client span {
+  display: block;
+  font-weight: 200;
+  font-size: 16px;
+}
   </style>
   
